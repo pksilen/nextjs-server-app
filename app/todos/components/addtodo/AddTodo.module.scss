@@ -1,0 +1,14 @@
+.addTodo {
+  align-items: flex-end;
+  display: flex;
+  margin-block-start: 40px;
+
+  .titleInput {
+    flex-grow: 1;
+  }
+
+  .addButton {
+    flex-shrink: 0;
+    margin-inline-start: 25px;
+  }
+}

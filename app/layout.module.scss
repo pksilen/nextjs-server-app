@@ -1,0 +1,15 @@
+.header {
+  height: 45px;
+}
+
+.navigation {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  padding: 10px;
+
+  a:hover {
+    color: dodgerblue;
+    text-decoration: underline;
+  }
+}
