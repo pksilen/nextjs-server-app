@@ -1,7 +1,7 @@
 import React from 'react';
 import { ErrorBoundary as ReactErrorBoundary } from 'react-error-boundary';
-import { Button } from '@/app/todos/common/components/buttons/Button';
-import { Heading3 } from '@/app/todos/common/components/typography/Heading3';
+import { Button } from '@/app/common/components/buttons/Button';
+import { Heading3 } from '@/app/common/components/typography/Heading3';
 import { useTodosStore } from '@/app/todos/stores/todos/todosStore';
 import classes from './ErrorBoundary.module.scss';
 

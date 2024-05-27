@@ -1,4 +1,4 @@
-import { List } from '@/app/todos/common/components/list/List';
+import { List } from '@/app/common/components/list/List';
 import { Todo } from '@/app/todos/stores/todos/Todo';
 import { PendingTodos } from './PendingTodos';
 import { TodoListItem } from './todo/TodoListItem';

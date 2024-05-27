@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table } from '@/app/todos/common/components/table/Table';
+import { Table } from '@/app/common/components/table/Table';
 import { Todo } from '@/app/todos/stores/todos/Todo';
 import { PendingTodos } from './PendingTodos';
 import { TodoTableRow } from './todo/TodoTableRow';

@@ -10,7 +10,6 @@ import { TodosTable } from './components/todos/TodosTable';
 import classes from './page.module.scss';
 
 export default function TodosPage() {
-  const theme = useControlsStore((store) => store.theme);
   const viewType = useControlsStore((store) => store.viewType);
 
   return (

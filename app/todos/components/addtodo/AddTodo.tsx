@@ -1,5 +1,5 @@
-import { Button } from '@/app/todos/common/components/buttons/Button';
-import { TextInput } from '@/app/todos/common/components/inputs/TextInput';
+import { Button } from '@/app/common/components/buttons/Button';
+import { TextInput } from '@/app/common/components/inputs/TextInput';
 import classes from './AddTodo.module.scss';
 import { useTodoAdding } from './useTodoAdding';
 

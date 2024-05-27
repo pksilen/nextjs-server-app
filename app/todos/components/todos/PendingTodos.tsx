@@ -1,5 +1,5 @@
-import { Pending } from '@/app/todos/common/components/Pending';
-import { Heading4 } from '@/app/todos/common/components/typography/Heading4';
+import { Pending } from '@/app/common/components/Pending';
+import { Heading4 } from '@/app/common/components/typography/Heading4';
 import { useTodosStore } from '@/app/todos/stores/todos/todosStore';
 import classes from './Todos.module.scss';
 

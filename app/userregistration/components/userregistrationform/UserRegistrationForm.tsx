@@ -1,20 +1,17 @@
 'use client';
 
 import { FieldPath } from 'react-hook-form';
-import { ErrorAlert } from '@/app/userregistration/common/components/stateless/alerts/ErrorAlert';
-import { SubmitButton } from '@/app/userregistration/common/components/stateless/buttons/SubmitButton';
-import {
-  TextInput,
-  TextInputProps
-} from '@/app/userregistration/common/components/stateless/input/TextInput';
-import { createControlledFormInput } from '@/app/userregistration/common/components/stateless/input/factories/createControlledFormInput';
+import { ErrorAlert } from '@/app/common/components/alerts/ErrorAlert';
+import { SubmitButton } from '@/app/common/components/buttons/SubmitButton';
+import { TextInput, TextInputProps } from '@/app/common/components/inputs/TextInput';
+import { createControlledFormInput } from '@/app/common/components/inputs/factories/createControlledFormInput';
 import classes from './UserRegistrationForm.module.scss';
 import { useUserRegistration } from './useUserRegistration';
 import { UserSchema } from './userSchema';
 
 const ControlledFormTextInput = createControlledFormInput<TextInputProps, UserSchema>(TextInput, {
-  maxLength: 128,
-  required: !window.location.href.includes('test')
+  required: true,
+  variant: 'outlined'
 });
 
 export const UserRegistrationForm = () => {

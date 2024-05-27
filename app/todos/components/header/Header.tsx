@@ -1,6 +1,6 @@
-import { Badge } from '@/app/todos/common/components/badges/Badge';
-import { SearchInput } from '@/app/todos/common/components/inputs/SearchInput';
-import { Heading2 } from '@/app/todos/common/components/typography/Heading2';
+import { Badge } from '@/app/common/components/badges/Badge';
+import { SearchInput } from '@/app/common/components/inputs/SearchInput';
+import { Heading2 } from '@/app/common/components/typography/Heading2';
 import { getUndoneTodoCount } from '@/app/todos/stores/todos/todoSelectors';
 import { useTodosStore } from '@/app/todos/stores/todos/todosStore';
 import classes from './Header.module.scss';

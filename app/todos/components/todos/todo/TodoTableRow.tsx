@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import { IconButton } from '@/app/todos/common/components/buttons/IconButton';
-import { EditIcon, RemoveIcon } from '@/app/todos/common/components/icons/Icons';
-import { Checkbox } from '@/app/todos/common/components/inputs/Checkbox';
-import { EditTextInput } from '@/app/todos/common/components/inputs/EditTextInput';
-import { TableCell } from '@/app/todos/common/components/table/TableCell';
-import { TableRow } from '@/app/todos/common/components/table/TableRow';
+import { IconButton } from '@/app/common/components/buttons/IconButton';
+import { EditIcon, RemoveIcon } from '@/app/common/components/icons/Icons';
+import { Checkbox } from '@/app/common/components/inputs/Checkbox';
+import { EditTextInput } from '@/app/common/components/inputs/EditTextInput';
+import { TableCell } from '@/app/common/components/table/TableCell';
+import { TableRow } from '@/app/common/components/table/TableRow';
 import { Todo } from '@/app/todos/stores/todos/Todo';
 import classes from './TodoTableRow.module.scss';
 import { useTodo } from './useTodo';

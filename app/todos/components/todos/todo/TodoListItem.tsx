@@ -1,15 +1,10 @@
 import clsx from 'clsx';
-import { IconOrButton } from '@/app/todos/common/components/buttons/IconOrButton';
-import {
-  CheckIcon,
-  EditIcon,
-  RemoveIcon,
-  TodoIcon
-} from '@/app/todos/common/components/icons/Icons';
-import { EditTextInput } from '@/app/todos/common/components/inputs/EditTextInput';
-import { ListItem } from '@/app/todos/common/components/list/ListItem';
-import { ListItemIcon } from '@/app/todos/common/components/list/ListItemIcon';
-import { ListItemText } from '@/app/todos/common/components/list/ListItemText';
+import { IconOrButton } from '@/app/common/components/buttons/IconOrButton';
+import { CheckIcon, EditIcon, RemoveIcon, TodoIcon } from '@/app/common/components/icons/Icons';
+import { EditTextInput } from '@/app/common/components/inputs/EditTextInput';
+import { ListItem } from '@/app/common/components/list/ListItem';
+import { ListItemIcon } from '@/app/common/components/list/ListItemIcon';
+import { ListItemText } from '@/app/common/components/list/ListItemText';
 import { Todo } from '@/app/todos/stores/todos/Todo';
 import classes from './TodoListItem.module.scss';
 import { useTodo } from './useTodo';

@@ -1,4 +1,4 @@
-import { afterMount } from '@/app/todos/common/hooks/afterMount';
+import { afterMount } from '@/app/common/hooks/afterMount';
 import { getShownTodos } from '@/app/todos/stores/todos/todoSelectors';
 import { useTodosStore } from '@/app/todos/stores/todos/todosStore';
 

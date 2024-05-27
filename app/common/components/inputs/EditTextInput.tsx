@@ -1,5 +1,5 @@
 import { KeyboardEvent, useState } from 'react';
-import { TextInput } from '@/app/todos/common/components/inputs/TextInput';
+import { TextInput } from '@/app/common/components/inputs/TextInput';
 import classes from './EditTextInput.module.scss';
 
 type Props = Readonly<{

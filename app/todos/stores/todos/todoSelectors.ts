@@ -1,4 +1,4 @@
-import { isAny } from '@/app/todos/common/utils/isAny';
+import { isAny } from '@/app/common/utils/isAny';
 import { Todo } from './Todo';
 import { TodosStore } from './todosStore';
 
