@@ -27,4 +27,5 @@ export async function registerUser(prevState: any, formData: FormData) {
 
   await userService.registerUser(user as User);
   revalidatePath('/userregistration');
+  return { errorMessage: '' };
 }

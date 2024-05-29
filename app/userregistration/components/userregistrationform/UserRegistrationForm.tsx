@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef } from 'react';
 import { useFormState } from 'react-dom';
 import { ErrorAlert } from '@/app/common/components/alerts/ErrorAlert';
 import { SubmitButton } from '@/app/common/components/buttons/SubmitButton';
@@ -10,8 +11,8 @@ import classes from './UserRegistrationForm.module.scss';
 import { UserSchema } from './userSchema';
 
 export const UserRegistrationForm = () => {
-  // @ts-ignore
   const [state, tryRegisterUser] = useFormState(registerUser, { errorMessage: '' });
+  const ref = useRef<HTMLFormElement>(null);
 
   const createTextInput = (fieldName: keyof UserSchema) => (
     <TextInput
@@ -22,8 +23,13 @@ export const UserRegistrationForm = () => {
     />
   );
 
+  if (!state.errorMessage) {
+    console.log('jee');
+    ref.current?.reset();
+  }
+
   return (
-    <form action={tryRegisterUser} className={classes.form}>
+    <form ref={ref} action={tryRegisterUser} className={classes.form}>
       <fieldset className={classes.inlineFields}>
         {createTextInput('firstName')}
         {createTextInput('lastName')}
