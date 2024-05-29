@@ -1,7 +1,7 @@
-import { useUserStore } from '@/app/userregistration/stores/userStore';
+import { getUsers } from '@/app/userregistration/model/actions/getUsers';
 
-export const UserList = () => {
-  const users = useUserStore((store) => store.users);
+export const UserList = async () => {
+  const users = await getUsers();
 
   const userListItems = users.map(
     ({ id, firstName, lastName, streetAddress, zipCode, city, email, phoneNumber }) => (

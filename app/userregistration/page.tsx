@@ -1,5 +1,3 @@
-'use client';
-
 import { UserList } from './components/userlist/UserList';
 import { UserRegistrationForm } from './components/userregistrationform/UserRegistrationForm';
 import classes from './page.module.scss';

@@ -1,4 +1,3 @@
-import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 export const userSchema = yup
@@ -13,15 +12,4 @@ export const userSchema = yup
   })
   .required();
 
-export const defaultValues = {
-  firstName: '',
-  lastName: '',
-  streetAddress: '',
-  zipCode: '',
-  city: '',
-  email: '',
-  phoneNumber: ''
-};
-
-export const resolver = yupResolver(userSchema);
 export type UserSchema = yup.InferType<typeof userSchema>;

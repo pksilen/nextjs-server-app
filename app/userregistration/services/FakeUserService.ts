@@ -1,25 +1,29 @@
-import { v4 as uuidv4 } from 'uuid';
+import { User } from '@/app/userregistration/model/User';
 import { UserSchema } from '../components/userregistrationform/userSchema';
-import { User } from '../stores/User';
 import { UserService } from './UserService';
 
 class FakeUserService implements UserService {
-  private readonly users: User[] = [];
+  async registerUser(user: UserSchema): Promise<User> {
+    const response = await fetch('http://localhost:3001/users', {
+      method: 'POST',
+      body: JSON.stringify(user),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
 
-  registerUser(user: UserSchema): Promise<User> {
-    const registeredUser = { id: uuidv4(), ...user };
-    const isTest = window.location.href.includes('test');
+    const userOrError = await response.json();
 
-    if ((isTest && !window.location.href.includes('fail')) || (!isTest && Math.random() < 0.7)) {
-      this.users.push(registeredUser);
-      return Promise.resolve(registeredUser);
+    if (response.ok) {
+      return userOrError;
+    } else {
+      throw new Error(`${response.statusText}: ${userOrError.errorMessage}`);
     }
-
-    return Promise.reject(new Error());
   }
 
-  getUsers(): Promise<User[]> {
-    return Promise.resolve(this.users);
+  async getUsers(): Promise<User[]> {
+    const response = await fetch('http://localhost:3001/users');
+    return await response.json();
   }
 }
 

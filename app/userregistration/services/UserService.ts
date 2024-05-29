@@ -1,4 +1,4 @@
-import { User } from '../stores/User';
+import { User } from '@/app/userregistration/model/User';
 
 export interface UserService {
   registerUser(user: User): Promise<User>;

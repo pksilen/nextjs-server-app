@@ -1,32 +1,29 @@
 'use client';
 
-import { FieldPath } from 'react-hook-form';
+import { useFormState } from 'react-dom';
 import { ErrorAlert } from '@/app/common/components/alerts/ErrorAlert';
 import { SubmitButton } from '@/app/common/components/buttons/SubmitButton';
-import { TextInput, TextInputProps } from '@/app/common/components/inputs/TextInput';
-import { createControlledFormInput } from '@/app/common/components/inputs/factories/createControlledFormInput';
+import { TextInput } from '@/app/common/components/inputs/TextInput';
+import { registerUser } from '@/app/userregistration/model/actions/registerUser';
+import { camelCaseIdentifierToWords } from '@/app/userregistration/utils/camelCaseIdentifierToWords';
 import classes from './UserRegistrationForm.module.scss';
-import { useUserRegistration } from './useUserRegistration';
 import { UserSchema } from './userSchema';
 
-const ControlledFormTextInput = createControlledFormInput<TextInputProps, UserSchema>(TextInput, {
-  required: true,
-  variant: 'outlined'
-});
-
 export const UserRegistrationForm = () => {
-  const { error, form, handleUserRegistration } = useUserRegistration();
+  // @ts-ignore
+  const [state, tryRegisterUser] = useFormState(registerUser, { errorMessage: '' });
 
-  const createTextInput = (formFieldName: FieldPath<UserSchema>) => (
-    <ControlledFormTextInput
-      formControl={form.control}
-      formErrors={form.formState.errors}
-      formFieldName={formFieldName}
+  const createTextInput = (fieldName: keyof UserSchema) => (
+    <TextInput
+      inputProps={{ name: fieldName }}
+      label={camelCaseIdentifierToWords(fieldName)}
+      required={true}
+      variant="outlined"
     />
   );
 
   return (
-    <form className={classes.form} onSubmit={handleUserRegistration}>
+    <form action={tryRegisterUser} className={classes.form}>
       <fieldset className={classes.inlineFields}>
         {createTextInput('firstName')}
         {createTextInput('lastName')}
@@ -39,7 +36,7 @@ export const UserRegistrationForm = () => {
       {createTextInput('email')}
       {createTextInput('phoneNumber')}
       <SubmitButton>Register</SubmitButton>
-      {error && <ErrorAlert>Registration failed. Please try again.</ErrorAlert>}
+      {state?.errorMessage && <ErrorAlert>{state.errorMessage}</ErrorAlert>}
     </form>
   );
 };
