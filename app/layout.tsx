@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Links from '@/app/Links';
 import './globals.css';
 import classes from './layout.module.scss';
 import ThemeProvider from './theme-provider';
@@ -20,8 +20,7 @@ export default function RootLayout({
         <ThemeProvider>
           <header className={classes.header}>
             <nav className={classes.navigation}>
-              <Link href="userregistration">User Registration</Link>
-              <Link href="todos">Todos</Link>
+              <Links />
             </nav>
           </header>
           {children}

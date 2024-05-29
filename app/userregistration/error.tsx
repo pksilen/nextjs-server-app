@@ -1,5 +1,7 @@
 'use client';
 
+import classes from './error.module.scss';
+
 export default function Error({
   error,
   reset
@@ -8,7 +10,7 @@ export default function Error({
   reset: () => void;
 }) {
   return (
-    <div>
+    <div className={classes.errorMessage}>
       <h2>{error.message}</h2>
       <button onClick={() => reset()}>Try again</button>
     </div>
